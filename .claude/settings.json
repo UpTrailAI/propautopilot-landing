@@ -1,0 +1,13 @@
+{
+  "contextFiles": ["CLAUDE.md", "LANDING-PAGE-BRIEF.md"],
+                                                                                                                                                                           
+     "permissions": {                                                                                                                                                          
+       "allow": [                                                                                                                                                              
+         "Bash(*)",                                                                                                                                                            
+         "Read(*)",                                                                                                                                                            
+         "Write(*)",                                                                                                                                                           
+         "Edit(*)"                                                                                                                                                             
+       ]                                                                                                                                                                       
+     }                                                                                                                                                                         
+   
+}
