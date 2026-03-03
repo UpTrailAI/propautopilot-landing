@@ -50,7 +50,7 @@ const jsonLd = {
   offers: {
     "@type": "AggregateOffer",
     lowPrice: "99",
-    highPrice: "599",
+    highPrice: "249",
     priceCurrency: "AUD",
     offerCount: "3",
   },
