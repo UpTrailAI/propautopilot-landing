@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Map, Search, PieChart, Activity, Shield, Users, Clock } from "lucide-react"
+import { ArrowRight, Check, Map, Search, PieChart, Activity, Shield, Target, MousePointer2 } from "lucide-react"
 import { WaitlistForm } from "@/components/waitlist-form"
 
 const SUBURB_DATA = [
@@ -9,20 +9,20 @@ const SUBURB_DATA = [
 
 const FEATURES = [
   {
-    title: "No more tab-hopping",
-    description: "Combine CoreLogic, PropTrack, and ABS data into one unified view. Everything you need to compare suburbs side-by-side.",
+    title: "Unified Data Pipeline",
+    description: "Connect CoreLogic, PropTrack, and ABS data into one view. Compare suburbs without losing context.",
     icon: Search,
     tag: "Efficiency"
   },
   {
-    title: "Transparent Scoring",
-    description: "Our 22-factor model doesn't just give you a number. It gives you the 'why'—growth pressure, stock levels, and yield trends.",
+    title: "Explicit Rationale",
+    description: "Every score is backed by 22 transparent factors. See the growth pressure and stock levels before you buy.",
     icon: PieChart,
     tag: "Insights"
   },
   {
-    title: "Strategy to Settlement",
-    description: "Manage your entire acquisition pipeline. Shortlist properties, track negotiations, and monitor your portfolio growth.",
+    title: "Deal Command",
+    description: "A professional pipeline for your entire acquisition. Track shortlists, offers, and settlement progress.",
     icon: Activity,
     tag: "Execution"
   }
@@ -32,8 +32,8 @@ const PRICING = [
   {
     name: "Starter",
     price: "49",
-    description: "For focused individual investors.",
-    features: ["5 Tracked Properties", "Core Suburb Analysis", "Deal Pipeline Access", "Property Help Center"],
+    description: "For focused solo investors.",
+    features: ["5 Tracked Properties", "Core Suburb Analysis", "Deal Pipeline Access"],
     cta: "Join Waitlist",
     highlight: false
   },
@@ -41,7 +41,7 @@ const PRICING = [
     name: "Pro",
     price: "99",
     description: "For active portfolio builders.",
-    features: ["25 Tracked Properties", "Full Model Transparency", "Batch REA Calling AI", "Multilingual Support"],
+    features: ["25 Tracked Properties", "Full Model Transparency", "Batch REA Calling AI"],
     cta: "Join Waitlist",
     highlight: true
   },
@@ -49,7 +49,7 @@ const PRICING = [
     name: "Business",
     price: "249",
     description: "For teams and advisors.",
-    features: ["Unlimited Properties", "Advanced Risk Filters", "Team Collaboration", "Priority Data Sync"],
+    features: ["Unlimited Properties", "Advanced Risk Filters", "Team Collaboration"],
     cta: "Join Waitlist",
     highlight: false
   }
@@ -57,105 +57,96 @@ const PRICING = [
 
 export function LandingV2() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-700">
-      {/* Navigation - Minimalist */}
-      <header className="fixed top-0 z-50 w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
-          <div className="flex items-center gap-2">
-            <div className="size-8 rounded-lg bg-slate-900 flex items-center justify-center">
-              <div className="size-3 rounded-full bg-white animate-pulse" />
+    <div className="min-h-screen bg-[#FDFDFD] text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased">
+      {/* Precision Header */}
+      <header className="fixed top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 lg:px-8">
+          <div className="flex items-center gap-2.5">
+            <div className="size-6 rounded bg-slate-900 flex items-center justify-center">
+              <div className="size-2 rounded-full bg-white" />
             </div>
-            <span className="font-bold tracking-tight text-slate-900">PropAutopilot</span>
+            <span className="text-sm font-bold tracking-tight text-slate-900 uppercase">PropAutopilot</span>
           </div>
-          <nav className="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+          <nav className="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">
             <a href="#features" className="hover:text-slate-900 transition-colors">Platform</a>
             <a href="#pricing" className="hover:text-slate-900 transition-colors">Pricing</a>
             <a href="#waitlist" className="hover:text-slate-900 transition-colors">Waitlist</a>
           </nav>
-          <a href="#waitlist" className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 shadow-sm">
-            Reserve Spot
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="#waitlist" className="text-[11px] font-bold uppercase tracking-widest text-slate-900 border-b-2 border-slate-900 pb-0.5 hover:text-slate-500 hover:border-slate-500 transition-all">
+              Reserve Spot
+            </a>
+          </div>
         </div>
       </header>
 
-      <main className="pt-16">
-        {/* Hero Section - High Contrast & Clean Typography */}
-        <section className="relative overflow-hidden px-6 pb-24 pt-20 lg:px-8 lg:pt-32">
+      <main className="pt-14">
+        {/* Hero - Ultra High End / Editorial Layout */}
+        <section className="relative px-6 py-20 lg:px-8 lg:py-32 overflow-hidden border-b border-slate-100">
           <div className="mx-auto max-w-7xl">
-            <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-indigo-600">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-400 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-indigo-600"></span>
-                  </span>
-                  Coming April 2026
+            <div className="grid gap-20 lg:grid-cols-[1fr_0.8fr] lg:items-start">
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 mb-8">
+                  <span className="size-1.5 rounded-full bg-slate-900 animate-pulse" />
+                  Product Launch · Q2 2026
                 </div>
-                <h1 className="mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl lg:leading-[1.1]">
-                  Property investing, <br />
-                  <span className="text-slate-400 font-medium">uncomplicated.</span>
+                <h1 className="text-6xl font-black tracking-[-0.03em] text-slate-900 sm:text-8xl leading-[0.95]">
+                  Serious <br />
+                  Acquisition.
                 </h1>
-                <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-                  Stop wrestling with 15 open tabs and broken spreadsheets. 
-                  Get a unified view of suburb performance, deal analysis, and acquisition tracking. 
-                  Built for investors who value their time.
+                <p className="mt-10 max-w-lg text-xl leading-relaxed text-slate-500 font-medium italic border-l-4 border-slate-100 pl-6">
+                  One workspace for Australian property data. <br />
+                  No buyer-agent fees. No spreadsheet chaos.
                 </p>
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <a href="#waitlist" className="flex items-center justify-center gap-2 rounded-full bg-slate-900 px-8 py-4 text-base font-bold text-white transition hover:bg-slate-800 shadow-xl shadow-slate-200">
-                    Join the waitlist
-                    <ArrowRight className="size-5" />
+                <div className="mt-12 flex flex-col gap-5 sm:flex-row">
+                  <a href="#waitlist" className="group flex items-center justify-center gap-3 rounded-full bg-slate-900 px-10 py-5 text-sm font-bold text-white transition hover:bg-slate-800 shadow-2xl shadow-slate-200">
+                    Get On The List
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                   </a>
-                  <a href="#features" className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-600 transition hover:bg-slate-50">
-                    Platform overview
+                  <a href="#features" className="flex items-center justify-center rounded-full border border-slate-200 bg-white px-10 py-5 text-sm font-bold text-slate-900 transition hover:bg-slate-50">
+                    The Platform
                   </a>
-                </div>
-                
-                <div className="mt-12 flex items-center gap-8 text-slate-400">
-                   <div className="flex items-center gap-2">
-                     <Shield className="size-5" />
-                     <span className="text-xs font-semibold tracking-wide uppercase">Institutional Data</span>
-                   </div>
-                   <div className="flex items-center gap-2">
-                     <Map className="size-5" />
-                     <span className="text-xs font-semibold tracking-wide uppercase">AU Wide Support</span>
-                   </div>
                 </div>
               </div>
 
-              {/* Data Visualization Mockup - Minimalist */}
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-[2rem] bg-indigo-100/50 blur-3xl lg:-inset-8" />
-                <div className="relative rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl">
-                  <div className="rounded-xl border border-slate-100 bg-slate-50/50 p-6">
-                    <div className="mb-6 flex items-center justify-between">
-                      <h3 className="font-bold text-slate-800">Suburb Performance Matrix</h3>
-                      <span className="text-xs font-medium text-slate-400">Mar 2026</span>
+              {/* High-Fidelity Data UI Component */}
+              <div className="relative mt-12 lg:mt-0">
+                <div className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)]">
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-2">
+                       <Target className="size-4 text-slate-900" />
+                       <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Decision Matrix</span>
                     </div>
-                    <div className="space-y-4">
-                      {SUBURB_DATA.map((item) => (
-                        <div key={item.name} className="group relative rounded-xl border border-slate-200/60 bg-white p-4 transition hover:border-indigo-200 hover:shadow-md">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <p className="text-sm font-bold text-slate-900">{item.name}</p>
-                              <div className="mt-1 flex gap-4 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                                <span>Growth: <span className="text-emerald-600">{item.growth}</span></span>
-                                <span>Yield: <span className="text-indigo-600">{item.yield}</span></span>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-xl font-black text-slate-900">{item.score}</div>
-                              <div className="text-[9px] font-bold uppercase text-slate-400">Score</div>
-                            </div>
-                          </div>
-                          <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
-                            <div 
-                              className="h-full bg-slate-900 transition-all duration-1000" 
-                              style={{ width: `${item.score}%` }} 
-                            />
-                          </div>
+                    <div className="flex gap-1.5">
+                       <div className="size-2 rounded-full bg-slate-100" />
+                       <div className="size-2 rounded-full bg-slate-100" />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    {SUBURB_DATA.map((item) => (
+                      <div key={item.name} className="relative group">
+                        <div className="flex items-end justify-between mb-2">
+                           <span className="text-xs font-black text-slate-900">{item.name}</span>
+                           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Score: {item.score}</span>
                         </div>
-                      ))}
-                    </div>
+                        <div className="h-1 w-full bg-slate-50 rounded-full overflow-hidden">
+                           <div className="h-full bg-slate-900" style={{ width: `${item.score}%` }} />
+                        </div>
+                        <div className="mt-3 flex gap-4">
+                           <div className="px-2 py-1 rounded bg-slate-50 text-[9px] font-bold text-slate-500 uppercase tracking-widest">{item.growth} Growth</div>
+                           <div className="px-2 py-1 rounded bg-indigo-50 text-[9px] font-bold text-indigo-600 uppercase tracking-widest">{item.yield} Yield</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-10 pt-6 border-t border-slate-50 flex items-center justify-between">
+                     <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400">
+                        <MousePointer2 className="size-3" />
+                        <span>Interactive Model</span>
+                     </div>
+                     <span className="text-[9px] font-black uppercase text-slate-900">Live AU Data</span>
                   </div>
                 </div>
               </div>
@@ -163,88 +154,49 @@ export function LandingV2() {
           </div>
         </section>
 
-        {/* Feature Grid - Minimal & Content-First */}
-        <section id="features" className="bg-white py-24 sm:py-32 border-y border-slate-200">
+        {/* Value Pillars - Grid Layout */}
+        <section id="features" className="bg-white py-24 sm:py-32 border-b border-slate-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:text-center">
-              <h2 className="text-base font-bold uppercase tracking-[0.2em] text-indigo-600">The Platform</h2>
-              <p className="mt-4 text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">Built by investors, for investors.</p>
-              <p className="mt-6 text-lg leading-relaxed text-slate-600">
-                PropAutopilot doesn't automate your thinking. It automates the data-gathering that gets in the way of your thinking.
-              </p>
-            </div>
-            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                {FEATURES.map((feature) => (
-                  <div key={feature.title} className="flex flex-col">
-                    <dt className="flex items-center gap-x-3 text-lg font-bold leading-7 text-slate-900">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
-                        <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                      </div>
-                      {feature.title}
-                    </dt>
-                    <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-600">
-                      <p className="flex-auto">{feature.description}</p>
-                      <p className="mt-6">
-                        <span className="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 text-xs font-bold text-slate-500 ring-1 ring-inset ring-slate-200 uppercase tracking-wider">
-                          {feature.tag}
-                        </span>
-                      </p>
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+            <div className="grid gap-16 lg:grid-cols-3">
+              {FEATURES.map((feature) => (
+                <div key={feature.title} className="flex flex-col border-t-4 border-slate-900 pt-8">
+                   <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-6">{feature.tag}</span>
+                   <h3 className="text-2xl font-black tracking-tight text-slate-900 mb-4">{feature.title}</h3>
+                   <p className="text-base leading-relaxed text-slate-500">{feature.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Pricing Section - Clean, High-End Utility */}
-        <section id="pricing" className="py-24 sm:py-32">
+        {/* Pricing - Utility Grade */}
+        <section id="pricing" className="py-24 sm:py-32 bg-[#F9FAFB] border-b border-slate-100">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:text-center">
-              <h2 className="text-base font-bold uppercase tracking-[0.2em] text-indigo-600">Simple Pricing</h2>
-              <p className="mt-4 text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">No hidden fees. No $15k commissions.</p>
-              <p className="mt-6 text-lg text-slate-600">Choose the plan that matches your current acquisition goals.</p>
+            <div className="mb-20">
+              <h2 className="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-4">Investment Plans</h2>
+              <p className="text-4xl font-black tracking-tight text-slate-900">Simple pricing. <br />No $15k commissions.</p>
             </div>
 
-            <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-none lg:grid-cols-3">
+            <div className="grid gap-8 lg:grid-cols-3">
               {PRICING.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`relative flex flex-col justify-between rounded-3xl p-8 ring-1 transition-all duration-300 ${
-                    tier.highlight 
-                    ? "bg-slate-900 text-white ring-slate-900 shadow-2xl scale-105 z-10 sm:p-10" 
-                    : "bg-white text-slate-900 ring-slate-200 hover:ring-slate-300 sm:mx-8 lg:mx-0"
-                  }`}
-                >
-                  <div>
-                    <h3 className={`text-lg font-bold tracking-tight ${tier.highlight ? "text-indigo-400" : "text-slate-900"}`}>
-                      {tier.name}
-                    </h3>
-                    <p className="mt-4 flex items-baseline gap-x-2">
-                      <span className="text-5xl font-black tracking-tight">${tier.price}</span>
-                      <span className={`text-sm font-semibold leading-6 ${tier.highlight ? "text-slate-400" : "text-slate-500"}`}>/month</span>
-                    </p>
-                    <p className={`mt-4 text-sm leading-6 ${tier.highlight ? "text-slate-300" : "text-slate-600"}`}>
-                      {tier.description}
-                    </p>
-                    <ul role="list" className={`mt-8 space-y-3 text-sm leading-6 ${tier.highlight ? "text-slate-300" : "text-slate-600"}`}>
-                      {tier.features.map((feature) => (
-                        <li key={feature} className="flex gap-x-3">
-                          <Check className={`h-6 w-5 flex-none ${tier.highlight ? "text-indigo-400" : "text-indigo-600"}`} aria-hidden="true" />
-                          {feature}
+                <div key={tier.name} className={`flex flex-col rounded-2xl border p-8 transition-all ${tier.highlight ? 'bg-slate-900 border-slate-900 shadow-2xl scale-105 z-10' : 'bg-white border-slate-200'}`}>
+                  <div className="flex-1">
+                    <h3 className={`text-sm font-black uppercase tracking-widest ${tier.highlight ? 'text-white' : 'text-slate-900'}`}>{tier.name}</h3>
+                    <div className="mt-6 flex items-baseline gap-2">
+                      <span className={`text-5xl font-black tracking-tight ${tier.highlight ? 'text-white' : 'text-slate-900'}`}>${tier.price}</span>
+                      <span className={`text-xs font-bold uppercase tracking-widest ${tier.highlight ? 'text-slate-400' : 'text-slate-400'}`}>/ Month</span>
+                    </div>
+                    <p className={`mt-4 text-sm leading-relaxed ${tier.highlight ? 'text-slate-400' : 'text-slate-500'}`}>{tier.description}</p>
+                    <ul className="mt-10 space-y-4">
+                      {tier.features.map((f) => (
+                        <li key={f} className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider">
+                          <Check className={`size-4 ${tier.highlight ? 'text-white' : 'text-slate-900'}`} />
+                          <span className={tier.highlight ? 'text-white' : 'text-slate-900'}>{f}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <a
-                    href="#waitlist"
-                    className={`mt-8 block rounded-full px-3 py-3 text-center text-sm font-bold leading-6 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                      tier.highlight
-                      ? "bg-white text-slate-900 hover:bg-slate-100 shadow-lg"
-                      : "bg-slate-900 text-white hover:bg-slate-800"
-                    }`}
-                  >
+                  <a href="#waitlist" className={`mt-10 block rounded-full py-4 text-center text-xs font-black uppercase tracking-[0.2em] transition ${tier.highlight ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-900 text-white hover:bg-slate-800'}`}>
                     {tier.cta}
                   </a>
                 </div>
@@ -253,70 +205,44 @@ export function LandingV2() {
           </div>
         </section>
 
-        {/* Waitlist Section - Direct & Clean */}
-        <section id="waitlist" className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-          <div className="relative isolate overflow-hidden bg-slate-950 px-6 py-16 shadow-2xl rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-             {/* Background blur effects */}
-            <svg viewBox="0 0 1024 1024" className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
-              <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fillOpacity="0.7" />
-              <defs>
-                <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                  <stop stopColor="#6366f1" />
-                  <stop offset="1" stopColor="#818cf8" />
-                </radialGradient>
-              </defs>
-            </svg>
-
-            <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-              <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl">
-                Ready for the pilot? <br />
-                Join the Founding 100.
+        {/* Waitlist - Editorial Block */}
+        <section id="waitlist" className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+          <div className="grid gap-16 lg:grid-cols-2 lg:items-center border-4 border-slate-900 p-12 lg:p-24 rounded-[3rem]">
+            <div>
+              <h2 className="text-4xl font-black tracking-tight text-slate-900 sm:text-6xl leading-[0.95] mb-8">
+                Ready to <br />Execute?
               </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300">
-                The first 100 waitlist members will lock in a 30% lifetime discount with code <span className="text-white font-mono font-bold uppercase">Founder30</span>.
+              <p className="text-lg text-slate-500 font-medium mb-4">
+                The first 100 waitlist members lock in a 30% lifetime discount.
               </p>
-              <div className="mt-10">
-                <WaitlistForm />
+              <div className="flex items-center gap-3">
+                 <span className="text-[10px] font-black uppercase tracking-widest bg-slate-900 text-white px-3 py-1 rounded">Code: FOUNDER30</span>
               </div>
             </div>
-
-            <div className="relative mt-16 h-80 lg:mt-8">
-              <div className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10 backdrop-blur-sm p-8">
-                <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
-                  <div className="size-3 rounded-full bg-red-500/50" />
-                  <div className="size-3 rounded-full bg-yellow-500/50" />
-                  <div className="size-3 rounded-full bg-green-500/50" />
-                  <div className="ml-auto text-[10px] font-mono text-white/30 uppercase tracking-widest">propautopilot.system</div>
-                </div>
-                <div className="space-y-4">
-                  <div className="h-4 w-3/4 rounded bg-white/10 animate-pulse" />
-                  <div className="h-4 w-1/2 rounded bg-white/5 animate-pulse" />
-                  <div className="h-20 w-full rounded bg-white/5 animate-pulse" />
-                  <div className="grid grid-cols-3 gap-4">
-                     <div className="h-12 rounded bg-indigo-500/20" />
-                     <div className="h-12 rounded bg-white/5" />
-                     <div className="h-12 rounded bg-white/5" />
-                  </div>
-                </div>
-              </div>
+            
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+               <WaitlistForm />
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer - Functional & Quiet */}
-      <footer className="bg-white border-t border-slate-200">
-        <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center space-x-6 md:order-2 text-slate-400 text-sm font-medium">
+      <footer className="bg-white border-t border-slate-100 py-12 px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-2">
+            <div className="size-5 rounded bg-slate-900 flex items-center justify-center">
+              <div className="size-1 rounded-full bg-white" />
+            </div>
+            <span className="text-xs font-black tracking-tighter uppercase text-slate-900">PropAutopilot</span>
+          </div>
+          <div className="flex gap-10 text-[10px] font-bold uppercase tracking-widest text-slate-400">
              <a href="mailto:hello@propautopilot.com" className="hover:text-slate-900 transition-colors">Contact</a>
              <a href="/privacy" className="hover:text-slate-900 transition-colors">Privacy</a>
              <a href="/terms" className="hover:text-slate-900 transition-colors">Terms</a>
           </div>
-          <div className="mt-8 md:order-1 md:mt-0">
-            <p className="text-center text-xs leading-5 text-slate-500">
-              &copy; 2026 PropAutopilot Pty Ltd. Designed for production.
-            </p>
-          </div>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-slate-300">
+            &copy; 2026 Production Ready.
+          </p>
         </div>
       </footer>
     </div>
