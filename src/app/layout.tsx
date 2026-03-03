@@ -27,7 +27,6 @@ export const metadata: Metadata = {
       "AI-powered property acquisition platform. 3,800+ suburbs scored. From $99/mo.",
     url: "https://propautopilot.com",
     siteName: "PropAutopilot",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
@@ -35,7 +34,6 @@ export const metadata: Metadata = {
     title: "PropAutopilot — Build Your Property Portfolio Smarter",
     description:
       "AI-powered property acquisition platform. 3,800+ suburbs scored. From $99/mo.",
-    images: ["/opengraph-image"],
   },
 }
 
