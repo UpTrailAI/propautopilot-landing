@@ -1,6 +1,9 @@
+"use client"
+
 import { ArrowRight, Check, Activity, Menu } from "lucide-react"
 import { WaitlistForm } from "@/components/waitlist-form"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
+import { trackEvent } from "@/lib/analytics"
 
 // Data points for the high-density table
 const SUBURB_DATA = [
@@ -92,7 +95,7 @@ export function LandingV2() {
           </nav>
           
           <div className="hidden md:flex items-center">
-            <a href="#waitlist" className="bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2 rounded-xl hover:bg-slate-800 transition-colors">
+            <a href="#waitlist" onClick={() => trackEvent("waitlist_click", { location: "header_desktop" })} className="bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2 rounded-xl hover:bg-slate-800 transition-colors">
               Execute
             </a>
           </div>
@@ -123,7 +126,7 @@ export function LandingV2() {
                   </nav>
                   
                   <div className="p-6 mt-auto border-t border-slate-200">
-                    <a href="#waitlist" className="block text-center w-full bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest px-5 py-3 rounded-xl hover:bg-slate-800 transition-colors">
+                    <a href="#waitlist" onClick={() => trackEvent("waitlist_click", { location: "header_mobile" })} className="block text-center w-full bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest px-5 py-3 rounded-xl hover:bg-slate-800 transition-colors">
                       Execute
                     </a>
                   </div>
@@ -157,11 +160,11 @@ export function LandingV2() {
                   One workspace for CoreLogic + PropTrack data.
                 </p>
                 <div className="mt-12 flex flex-col sm:flex-row gap-4">
-                  <a href="#waitlist" className="inline-flex items-center justify-center gap-3 rounded-xl bg-slate-900 px-8 py-4 text-[11px] font-black uppercase tracking-widest text-white transition hover:bg-slate-800">
+                  <a href="#waitlist" onClick={() => trackEvent("waitlist_click", { location: "hero" })} className="inline-flex items-center justify-center gap-3 rounded-xl bg-slate-900 px-8 py-4 text-[11px] font-black uppercase tracking-widest text-white transition hover:bg-slate-800">
                     Get On The List
                     <ArrowRight className="size-4" />
                   </a>
-                  <a href="#features" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-8 py-4 text-[11px] font-black uppercase tracking-widest text-slate-900 transition hover:bg-slate-50">
+                  <a href="#features" onClick={() => trackEvent("features_click", { location: "hero" })} className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-8 py-4 text-[11px] font-black uppercase tracking-widest text-slate-900 transition hover:bg-slate-50">
                     View Platform
                   </a>
                 </div>
@@ -262,7 +265,7 @@ export function LandingV2() {
                         ))}
                      </ul>
                      
-                     <a href="#waitlist" className="w-full block text-center bg-slate-900 text-white font-mono text-[11px] font-black uppercase tracking-widest py-4 rounded-xl hover:bg-slate-800 transition-colors">
+                     <a href="#waitlist" onClick={() => trackEvent("waitlist_click", { location: `pricing_${tier.name.toLowerCase()}` })} className="w-full block text-center bg-slate-900 text-white font-mono text-[11px] font-black uppercase tracking-widest py-4 rounded-xl hover:bg-slate-800 transition-colors">
                         REQUEST ACCESS
                      </a>
                   </div>
@@ -315,6 +318,13 @@ export function LandingV2() {
           </p>
         </div>
       </footer>
+
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-slate-200 z-50 md:hidden pb-safe">
+        <a href="#waitlist" onClick={() => trackEvent("waitlist_click", { location: "sticky_mobile" })} className="block text-center w-full bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest px-5 py-4 rounded-xl shadow-lg hover:bg-slate-800 transition-colors">
+          Secure Early Access Now
+        </a>
+      </div>
     </div>
   )
 }
