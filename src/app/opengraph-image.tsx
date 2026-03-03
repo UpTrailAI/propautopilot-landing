@@ -14,116 +14,59 @@ export default function OGImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#09090b",
-          position: "relative",
+          justifyContent: "space-between",
+          backgroundColor: "#FDFDFD",
+          color: "#0f172a", // slate-900
+          fontFamily: "sans-serif",
+          padding: 80,
+          border: "16px solid #0f172a",
         }}
       >
-        {/* Central glow */}
-        <div
-          style={{
-            position: "absolute",
-            width: 800,
-            height: 500,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(ellipse, rgba(99,102,241,0.2) 0%, transparent 70%)",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
-
-        {/* Logo + brand */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            marginBottom: 32,
-          }}
-        >
-          <div
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 12,
-              background: "linear-gradient(135deg, #6366f1, #a855f7)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: 24,
-              fontWeight: 700,
-            }}
-          >
-            P
+        {/* Top Header */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", width: "100%" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            {/* Precision Logo */}
+            <div style={{ width: 32, height: 32, backgroundColor: "#0f172a", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ width: 8, height: 8, backgroundColor: "#ffffff" }} />
+            </div>
+            <span style={{ fontSize: 24, fontWeight: 900, letterSpacing: "0.2em", textTransform: "uppercase" }}>
+              PropAutopilot
+            </span>
           </div>
-          <span
-            style={{
-              color: "#fafafa",
-              fontSize: 28,
-              fontWeight: 600,
-            }}
-          >
-            PropAutopilot
-          </span>
+          <div style={{ fontSize: 20, fontWeight: 700, fontFamily: "monospace", color: "#64748b", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+            SYSTEM_READY // Q2 2026
+          </div>
         </div>
 
-        {/* Headline */}
-        <div
-          style={{
-            color: "#fafafa",
-            fontSize: 52,
-            fontWeight: 900,
-            textAlign: "center",
-            letterSpacing: -1,
-            lineHeight: 1.1,
-            maxWidth: 900,
-            marginBottom: 20,
-          }}
-        >
-          Build Your Property Portfolio Smarter
+        {/* Main Title */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 24, marginTop: 40 }}>
+          <div style={{ fontSize: 96, fontWeight: 900, lineHeight: 0.85, textTransform: "uppercase", letterSpacing: "-0.02em" }}>
+            Acquire <br />
+            With <br />
+            Precision.
+          </div>
+          <div style={{ fontSize: 32, fontWeight: 500, color: "#334155", maxWidth: 800 }}>
+            Stop paying $15k buyer-agent fees.<br />
+            One workspace for CoreLogic + PropTrack data.
+          </div>
         </div>
 
-        {/* Subheadline */}
-        <div
-          style={{
-            color: "#a1a1aa",
-            fontSize: 22,
-            textAlign: "center",
-            marginBottom: 32,
-          }}
-        >
-          AI-powered property acquisition platform. 3,800+ suburbs scored.
-        </div>
-
-        {/* Price pill */}
-        <div
-          style={{
-            display: "flex",
-            padding: "10px 28px",
-            borderRadius: 22,
-            border: "1px solid rgba(99,102,241,0.3)",
-            backgroundColor: "rgba(99,102,241,0.1)",
-            color: "#6366f1",
-            fontSize: 18,
-            fontWeight: 600,
-            marginBottom: 40,
-          }}
-        >
-          From $99/mo AUD
-        </div>
-
-        {/* Domain */}
-        <div
-          style={{
-            color: "#52525b",
-            fontSize: 16,
-          }}
-        >
-          propautopilot.com
+        {/* Bottom Data Bar */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", width: "100%", borderTop: "2px solid #e2e8f0", paddingTop: 32 }}>
+          <div style={{ display: "flex", gap: 40, fontFamily: "monospace", fontSize: 24, fontWeight: 700, color: "#0f172a" }}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span style={{ fontSize: 16, color: "#64748b", marginBottom: 8 }}>COVERAGE</span>
+              <span>3,800+ SUBURBS</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span style={{ fontSize: 16, color: "#64748b", marginBottom: 8 }}>ACCESS</span>
+              <span>FROM $99/MO</span>
+            </div>
+          </div>
+          
+          <div style={{ backgroundColor: "#0f172a", color: "#ffffff", padding: "16px 32px", fontSize: 20, fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            Execute
+          </div>
         </div>
       </div>
     ),
