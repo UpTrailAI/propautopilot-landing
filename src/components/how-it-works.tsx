@@ -21,7 +21,7 @@ const STEPS = [
     number: "02",
     title: "Find Your Suburbs",
     description:
-      "We score 3,800+ Australian suburbs across 22 factors — vacancy, yield, growth signals, hazards. Ranked shortlist in minutes, not weeks.",
+      "We score 15,000+ Australian suburbs across 22 factors — vacancy, yield, growth signals, hazards. Ranked shortlist in minutes, not weeks.",
     color: "text-purple-400",
     bg: "bg-purple-500/10",
     glow: "group-hover:shadow-purple-500/20",

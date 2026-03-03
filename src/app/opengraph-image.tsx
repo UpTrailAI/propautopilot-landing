@@ -96,7 +96,7 @@ export default function OGImage() {
             marginBottom: 32,
           }}
         >
-          AI-powered property acquisition platform. 3,800+ suburbs scored.
+          AI-powered property acquisition platform. 15,000+ suburbs scored.
         </div>
 
         {/* Price pill */}
