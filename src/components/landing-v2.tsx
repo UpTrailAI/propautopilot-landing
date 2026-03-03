@@ -76,7 +76,7 @@ const PRICING = [
 
 export function LandingV2() {
   return (
-    <div className="min-h-screen bg-[#FDFDFD] text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#FDFDFD] text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased overflow-x-hidden">
       {/* Precision Header */}
       <header className="fixed top-0 z-50 w-full border-b border-slate-200 bg-[#FDFDFD]/90 backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -150,7 +150,7 @@ export function LandingV2() {
                   <span className="size-2 bg-slate-900 animate-pulse" />
                   SYSTEM_READY // Q2 2026
                 </div>
-                <h1 className="text-6xl sm:text-7xl lg:text-[7rem] font-black tracking-tighter text-slate-900 uppercase leading-[0.85] text-left">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-black tracking-tighter text-slate-900 uppercase leading-[0.85] text-left">
                   Acquire <br />
                   With <br />
                   Precision.
@@ -171,7 +171,7 @@ export function LandingV2() {
               </div>
 
               {/* High-Fidelity Data UI Component */}
-              <div className="relative w-full max-w-lg mx-auto lg:mr-0 lg:ml-auto">
+              <div className="relative w-full max-w-lg mx-auto lg:mr-0 lg:ml-auto overflow-hidden">
                 <div className="bg-white border text-left border-slate-200 rounded-xl overflow-hidden shadow-sm">
                    <div className="border-b border-slate-200 bg-slate-50 px-5 py-3 flex justify-between items-center">
                       <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">AU_MARKET_DATA v1.0</span>
@@ -234,7 +234,7 @@ export function LandingV2() {
             {FEATURES.map((feature) => (
               <div key={feature.id} className="p-8 lg:p-12 hover:bg-slate-50 transition-colors cursor-default">
                  <div className="font-mono text-[10px] font-bold text-slate-400 mb-8 border-b border-slate-200 pb-4 inline-block">{feature.id}</div>
-                 <h3 className="text-2xl font-black text-slate-900 mb-4 leading-snug tracking-tighter uppercase">{feature.title}</h3>
+                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-4 leading-snug tracking-tighter uppercase">{feature.title}</h3>
                  <p className="text-sm text-slate-600 font-medium leading-relaxed">{feature.description}</p>
               </div>
             ))}
@@ -246,7 +246,7 @@ export function LandingV2() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mb-16">
                <h2 className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">LICENSING TERMS</h2>
-               <p className="text-4xl font-black tracking-tight text-slate-900 uppercase">Institutional Grade.<br />Accessible Rates.</p>
+               <p className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 uppercase">Institutional Grade.<br />Accessible Rates.</p>
             </div>
             <div className="grid lg:grid-cols-3 border-t border-l border-slate-200">
                {PRICING.map((tier) => (
@@ -277,10 +277,10 @@ export function LandingV2() {
         {/* Waitlist - Editorial Block */}
         <section id="waitlist" className="relative z-10 bg-white py-24 sm:py-32 border-b border-slate-200">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="border-4 border-slate-900 p-8 lg:p-16 rounded-xl relative bg-[#FDFDFD]">
+            <div className="border-2 sm:border-4 border-slate-900 p-4 sm:p-8 lg:p-16 rounded-xl relative bg-[#FDFDFD]">
                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                   <div>
-                     <h2 className="text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 uppercase leading-[0.85]">
+                     <h2 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 uppercase leading-[0.85]">
                         Ready To <br/>Execute?
                      </h2>
                      <p className="mt-8 text-slate-600 font-mono text-[13px] leading-relaxed uppercase tracking-wide max-w-md font-bold">
