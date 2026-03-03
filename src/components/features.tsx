@@ -30,7 +30,7 @@ const FEATURES: Feature[] = [
     icon: BarChart3,
     title: "Suburb Scoring Engine",
     description:
-      "22 factors from vacancy to infrastructure — scored, ranked, and visualised across 15,000+ suburbs.",
+      "22 factors from vacancy to infrastructure — scored, ranked, and visualised across 3,800+ suburbs.",
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
   },

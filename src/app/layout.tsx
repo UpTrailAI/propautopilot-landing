@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PropAutopilot — Build Your Property Portfolio Smarter",
     description:
-      "AI-powered property acquisition platform. 15,000+ suburbs scored. From $99/mo.",
+      "AI-powered property acquisition platform. 3,800+ suburbs scored. From $99/mo.",
     url: "https://propautopilot.com",
     siteName: "PropAutopilot",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PropAutopilot — Build Your Property Portfolio Smarter",
     description:
-      "AI-powered property acquisition platform. 15,000+ suburbs scored. From $99/mo.",
+      "AI-powered property acquisition platform. 3,800+ suburbs scored. From $99/mo.",
     images: ["/opengraph-image"],
   },
 }

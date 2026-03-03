@@ -20,7 +20,7 @@ const FEATURES = [
   {
     id: "F02",
     title: "Built for Saturday morning research.",
-    description: "High-density property screening. Filter 15,000+ suburbs by yield, growth pressure, and days on market instantly.",
+    description: "High-density property screening. Filter 3,800+ suburbs by yield, growth pressure, and days on market instantly.",
   },
   {
     id: "F03",

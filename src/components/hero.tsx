@@ -256,7 +256,7 @@ export function Hero() {
             className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground"
           >
             {[
-              "15,000+ suburbs scored",
+              "3,800+ suburbs scored",
               "Australian data only",
               "14-day free trial",
               "No credit card required",
