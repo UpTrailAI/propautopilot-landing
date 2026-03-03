@@ -73,23 +73,25 @@ export function WaitlistForm() {
 
   if (state === "success") {
     return (
-      <div className="text-center py-2">
-        <p className="text-2xl mb-2">Nice one.</p>
+      <div className="text-center">
+        <div className="mb-2 text-4xl">&#x2705;</div>
+        <h3 className="mb-1 text-2xl font-bold">You&apos;re on the list!</h3>
         {position && (
-          <p className="text-sm text-neutral-500">
-            You&apos;re number <span className="font-mono font-semibold text-neutral-900">#{position}</span> on the list.
+          <p className="mb-2 text-lg text-muted-foreground">
+            You&apos;re <span className="font-mono font-bold text-primary">#{position}</span> on
+            the waitlist
           </p>
         )}
-        <p className="text-sm text-neutral-400 mt-2">
-          We&apos;ll email you when early access opens.
+        <p className="text-sm text-muted-foreground">
+          We&apos;ll email you when early access opens on April 1st.
         </p>
       </div>
     )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <div className="flex flex-col gap-2.5 sm:flex-row">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="flex flex-col gap-3 sm:flex-row">
         <Input
           type="email"
           placeholder="you@email.com"
@@ -98,13 +100,13 @@ export function WaitlistForm() {
             setEmail(e.target.value)
             if (error) setError("")
           }}
-          className="h-11 rounded-lg border-neutral-200 bg-white text-sm placeholder:text-neutral-400 focus-visible:ring-neutral-900"
+          className="h-12 rounded-xl"
           aria-label="Email address"
           disabled={state === "loading"}
         />
         <Button
           type="submit"
-          className="h-11 shrink-0 rounded-lg bg-neutral-900 px-5 text-sm font-medium text-white hover:bg-neutral-800 sm:w-auto"
+          className="h-12 shrink-0 rounded-xl px-6 font-semibold shadow-lg shadow-primary/25 sm:w-auto"
           disabled={state === "loading"}
           aria-label="Join the waitlist"
         >
@@ -114,24 +116,24 @@ export function WaitlistForm() {
               Joining...
             </>
           ) : (
-            <>Join waitlist &rarr;</>
+            "Join Waitlist \u2192"
           )}
         </Button>
       </div>
 
-      <label className="flex cursor-pointer items-center gap-2 text-sm text-neutral-500">
+      <label className="flex cursor-pointer items-center gap-2 text-sm text-muted-foreground">
         <input
           type="checkbox"
           checked={isAdvisor}
           onChange={(e) => setIsAdvisor(e.target.checked)}
-          className="size-4 rounded border-neutral-300 accent-neutral-900"
+          className="size-4 rounded border-border accent-primary"
           disabled={state === "loading"}
         />
-        I&apos;m a buyer&apos;s agent or advisor
+        I&apos;m a buyer&apos;s agent or property advisor
       </label>
 
       {error && (
-        <p className="text-sm text-red-600" role="alert">
+        <p className="text-sm text-destructive" role="alert">
           {error}
         </p>
       )}
