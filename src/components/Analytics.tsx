@@ -1,7 +1,7 @@
 "use client"
 
-import { Analytics as VercelAnalytics } from "@vercel/analytics/react"
-
 export function Analytics() {
-  return <VercelAnalytics />
+  // Analytics will be handled by Vercel automatically in production
+  // This component is kept for compatibility
+  return null
 }
