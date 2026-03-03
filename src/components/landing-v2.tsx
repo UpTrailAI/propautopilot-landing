@@ -297,7 +297,7 @@ export function LandingV2() {
         </section>
       </main>
 
-      <footer className="bg-white py-12 px-6 lg:px-8">
+      <footer className="relative z-10 bg-[#FDFDFD] border-t border-slate-200 py-12 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-3">
             <div className="size-4 bg-slate-900 flex items-center justify-center">
@@ -310,8 +310,8 @@ export function LandingV2() {
              <a href="/privacy" className="hover:text-slate-900 transition-colors">Privacy</a>
              <a href="/terms" className="hover:text-slate-900 transition-colors">Terms</a>
           </div>
-          <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-300">
-            &copy; 2026 PRECISION SYSTEM.
+          <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            &copy; 2026 PROPAUTOPILOT.
           </p>
         </div>
       </footer>
