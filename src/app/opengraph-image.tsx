@@ -40,14 +40,14 @@ export default function OGImage() {
 
         {/* Main Title */}
         <div style={{ display: "flex", flexDirection: "column", gap: 24, marginTop: 40 }}>
-          <div style={{ fontSize: 96, fontWeight: 900, lineHeight: 0.85, textTransform: "uppercase", letterSpacing: "-0.02em" }}>
-            Acquire <br />
-            With <br />
-            Precision.
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 96, fontWeight: 900, lineHeight: 0.85, textTransform: "uppercase", letterSpacing: "-0.02em" }}>
+            <span>Acquire</span>
+            <span>With</span>
+            <span>Precision.</span>
           </div>
-          <div style={{ fontSize: 32, fontWeight: 500, color: "#334155", maxWidth: 800 }}>
-            Stop paying $15k buyer-agent fees.<br />
-            One workspace for CoreLogic + PropTrack data.
+          <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 32, fontWeight: 500, color: "#334155", maxWidth: 800 }}>
+            <span>Stop paying $15k buyer-agent fees.</span>
+            <span>One workspace for CoreLogic + PropTrack data.</span>
           </div>
         </div>
 
