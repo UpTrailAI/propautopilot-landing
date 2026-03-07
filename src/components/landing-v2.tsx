@@ -192,7 +192,7 @@ export function LandingV2() {
   const scrolled = useScrolled()
 
   return (
-    <div className="min-h-screen bg-[#FDFDFD] text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#FDFDFD] text-slate-900 selection:bg-slate-900 selection:text-white font-sans antialiased overflow-x-hidden">
       {/* Announcement Bar */}
       <div className="bg-slate-900 text-white text-center py-2.5 px-4 text-[11px] font-bold tracking-wide">
         <span className="inline-flex items-center gap-2">
@@ -307,7 +307,7 @@ export function LandingV2() {
               </div>
 
               {/* Hero Widget */}
-              <div className="relative w-full max-w-lg mx-auto lg:mr-0 lg:ml-auto">
+              <div className="relative w-full max-w-lg mx-auto lg:mr-0 lg:ml-auto min-w-0">
                 <div className="bg-white border text-left border-slate-200 rounded-xl overflow-hidden shadow-sm">
                   <div className="border-b border-slate-200 bg-slate-50 px-5 py-3 flex justify-between items-center">
                     <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest">SUBURB EXPLORER v1.0</span>
@@ -318,30 +318,30 @@ export function LandingV2() {
                     </div>
                   </div>
                   <div className="p-0 overflow-x-auto">
-                    <table className="w-full text-left border-collapse min-w-[400px]">
+                    <table className="w-full text-left border-collapse min-w-[340px] sm:min-w-[400px]">
                       <thead>
                         <tr className="border-b border-slate-200 bg-white">
-                          <th className="px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest">ID</th>
-                          <th className="px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest">LOC</th>
-                          <th className="px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest">METRICS</th>
-                          <th className="px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest text-right">STATUS</th>
+                          <th className="px-3 sm:px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest">ID</th>
+                          <th className="px-3 sm:px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest">LOC</th>
+                          <th className="px-3 sm:px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest">METRICS</th>
+                          <th className="px-3 sm:px-5 py-3 font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest text-right">STATUS</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-100 bg-white">
                         {SUBURB_DATA.map((row) => (
                           <tr key={row.id} className="hover:bg-slate-50 transition-colors">
-                            <td className="px-5 py-3 font-mono text-[11px] text-slate-500">{row.id}</td>
-                            <td className="px-5 py-3 border-l border-slate-100">
+                            <td className="px-3 sm:px-5 py-3 font-mono text-[11px] text-slate-500">{row.id}</td>
+                            <td className="px-3 sm:px-5 py-3 border-l border-slate-100">
                               <div className="font-mono text-[11px] font-bold text-slate-900">{row.name}</div>
                               <div className="font-mono text-[9px] text-slate-400 mt-0.5">{row.type}</div>
                             </td>
-                            <td className="px-5 py-3 border-l border-slate-100">
+                            <td className="px-3 sm:px-5 py-3 border-l border-slate-100">
                               <div className="flex flex-col gap-1">
                                 <span className="font-mono text-[10px] text-emerald-700 font-bold bg-emerald-50 px-1.5 py-0.5 rounded-sm inline-block w-max">{row.growth} GRW</span>
                                 <span className="font-mono text-[10px] text-indigo-700 font-bold bg-indigo-50 px-1.5 py-0.5 rounded-sm inline-block w-max">{row.yield} YLD</span>
                               </div>
                             </td>
-                            <td className="px-5 py-3 border-l border-slate-100 text-right">
+                            <td className="px-3 sm:px-5 py-3 border-l border-slate-100 text-right">
                               <div className="flex items-center justify-end gap-2">
                                 <div className={`size-2 rounded-full ${row.status === 'HIGH YIELD' ? 'bg-indigo-500' : 'bg-emerald-500'}`} />
                                 <span className="font-mono text-[10px] font-bold text-slate-900">{row.status}</span>
@@ -660,7 +660,7 @@ export function LandingV2() {
         {/* ===== SOCIAL PROOF ===== */}
         <section className="relative z-10 bg-[#FDFDFD] border-b border-slate-200 py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid grid-cols-3 gap-8 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="font-mono text-4xl sm:text-5xl font-black text-slate-900">200,000+</div>
                 <p className="mt-2 text-sm text-slate-600">New investor loans in AU every year</p>
